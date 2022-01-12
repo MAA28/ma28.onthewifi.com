@@ -1,0 +1,19 @@
+#SkipToContent {
+    transform: translateX(-110%);
+    transition: transform 0.3s;
+
+    position: absolute;
+    margin: 10px;
+    padding: 5px;
+    text-align: left;
+    left: 0;
+    border-radius: 3px;
+    color: var(--gray);
+    background-color: var(--red);
+}
+
+#SkipToContent:focus {
+    transform: translateX(0%);
+}
+
+
