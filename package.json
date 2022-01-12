@@ -1,0 +1,23 @@
+{
+  "name": "ma28.onthewifi.com",
+  "version": "1.0.0",
+  "description": "My personal Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MA28",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "request-ip": "^2.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAA28/ma28.onthewifi.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MAA28/ma28.onthewifi.com/issues"
+  },
+  "homepage": "https://github.com/MAA28/ma28.onthewifi.com#readme"
+}
