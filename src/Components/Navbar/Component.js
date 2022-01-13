@@ -7,7 +7,7 @@ function Navbar() {
                     <a href="https://github.com/MAA28">GitHub</a>
                 </li>
                 <li>
-                    <a href="/">Blogs</a>
+                    <a href="/blogs">Blogs</a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/malteaschenbach/">Instagram</a>

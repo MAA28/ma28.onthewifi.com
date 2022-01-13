@@ -1,7 +1,9 @@
 import Header from "../../Components/Header/Component";
+import { useLocation } from 'react-router-dom'
 
 function PageNotFound() {
-    console.log('404')
+    const location = useLocation();
+
     return (
         <div className="App">
             <Header/>
@@ -9,7 +11,7 @@ function PageNotFound() {
             <main id="main">
                 <h2>404 PageNotFound</h2>
                 <p>
-                    This website is currently under construction but I'm working hard to get everything running...
+                    Sorry, I couldn't find "<b>{location.pathname}</b>". Maybe look somewhere else?
                 </p>
             </main>
         </div>
