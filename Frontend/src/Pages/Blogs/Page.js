@@ -2,14 +2,12 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Header from "../../Components/Header/Component";
-
+import 
 
 
 export default function Blog(props) {
-    console.log('./' + props["title"] + '.md')
 
     let markdown = null;
-
 
 
 
