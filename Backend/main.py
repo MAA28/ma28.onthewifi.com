@@ -5,8 +5,6 @@ app = Flask(__name__)
 
 @app.route('/blogs/<title>')
 def get_blog(title):
-    title = title.split('=')[1]
-
     with open(f"./Blogs/{title}.md", 'r') as file:
         text = file.read()
     return json.dumps({

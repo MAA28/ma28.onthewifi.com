@@ -13,7 +13,7 @@ export default function App() {
                 <Route index element={<Home />} />
                 <Route path="blogs" element={<Blog />} />
                 {
-                    ['Test'].map((element) => (
+                    ['test'].map((element) => (
                             <Route key={"blogs/"+element} path={"blogs/"+element} element={<Blog title={element}/>} />
                     ))
                 }
