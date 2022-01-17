@@ -4,10 +4,10 @@
 
     position: absolute;
     margin: 10px;
-    padding: 5px;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
     text-align: left;
     left: 0;
-    border-radius: 3px;
     color: var(--gray);
     background-color: var(--red);
 }
