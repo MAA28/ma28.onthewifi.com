@@ -8,12 +8,18 @@ article section {
 }
 
 article section h2 {
-    background-color: var(--blue);
+    margin-top: 0;
+    background-color: var(--yellow);
     border-radius: var(--border-radius);
     padding: var(--padding);
     box-shadow: var(--box-shadow);
+    text-shadow: var(--blue) 2.5px 2.5px;
 }
-
+article section a {
+    color: var(--blue);
+    font-style: italic;
+    font-weight: bold;
+}
 
 article {
     display: flex;

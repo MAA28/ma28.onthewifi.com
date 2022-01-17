@@ -29,6 +29,9 @@ export default function AboutMe () {
                                     My Chess CLI
                                 </a>
                             </li>
+                            <li>
+                                I installed <a href="https://pi-hole.net/">Pi-Hole</a> on my raspberry pi and learned about networking
+                            </li>
                         </ul>
                     </p>
                 </section>
