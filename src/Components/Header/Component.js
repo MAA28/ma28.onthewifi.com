@@ -1,5 +1,6 @@
 import SkipToContent from "../SkipToContent/Component";
 import Navbar from "../Navbar/Component";
+import './style.css'
 
 function Header() {
     return (

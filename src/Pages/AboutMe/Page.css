@@ -1,0 +1,7 @@
+article section {
+    background-color: var(--gray);
+    width: 75%;
+}
+article {
+    display: flex;
+}

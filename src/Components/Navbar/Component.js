@@ -12,6 +12,9 @@ function Navbar() {
                 <li>
                     <a href="https://www.instagram.com/malteaschenbach/">Instagram</a>
                 </li>
+                <li>
+                    <a href="/AboutMe">About Me</a>
+                </li>
             </nav>
     );
 }
