@@ -8,7 +8,7 @@ export default function AboutMe () {
             <article id="main">
                 <section>
                     <h2>
-                        Hi, ich Malte A. Aschenbach!
+                        Hi, ich bin Malte A. Aschenbach!
                     </h2>
                     <p>Ich bin ein Schüler des Hainberg Gymnasiums, spiele gerne Handball und interessiere mich für Naturwissenschaften und Informatik.</p>
                 </section>
