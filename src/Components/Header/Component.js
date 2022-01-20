@@ -6,7 +6,7 @@ function Header() {
     return (
         <header>
             <SkipToContent/>
-            <h1>ma28.onthewifi.com</h1>
+            <h1><a href="/">ma28.onthewifi.com</a></h1>
             <Navbar/>
         </header>
     )
