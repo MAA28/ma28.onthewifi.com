@@ -10,7 +10,7 @@ export default function App() {
             <Routes>
                 <Route index element={<Home/>}/>
                 <Route path="/AboutMe" element={<AboutMe/>}/>
-                <Route path="*" element={<PageNotFound/>}/> <!-- 404 -->
+                <Route path="*" element={<PageNotFound/>}/>
             </Routes>
         </BrowserRouter>
     );
