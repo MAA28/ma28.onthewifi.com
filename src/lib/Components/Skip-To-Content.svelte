@@ -1,0 +1,21 @@
+<a id="SkipToContent" href="#main">Skip to main content!</a>
+
+<style lang="scss">
+    #SkipToContent {
+        transform: translateX(-110%);
+        transition: transform 0.3s;
+
+        position: absolute;
+        margin: 10px;
+        padding: var(--padding);
+        border-radius: var(--border-radius);
+        text-align: left;
+        left: 0;
+        color: var(--gray);
+        background-color: var(--red);
+    }
+
+    #SkipToContent:focus {
+        transform: translateX(0%);
+    }
+</style>
