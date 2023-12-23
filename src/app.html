@@ -5,39 +5,14 @@
 	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<meta name="viewport" content="width=device-width" />
+	<link href="/dist/output.css">
 	%sveltekit.head%
 </head>
 
 <body data-sveltekit-preload-data="hover">
 	<div style="display: contents">%sveltekit.body%</div>
+	<h1 class="text-3xl font-bold underline">
+		Hello world!
+	  </h1>
 </body>
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,600&display=swap');
-
-	body {
-		margin: 0;
-		font-family: 'IBM Plex Mono', monospace;
-
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		background-color: var(--black);
-	}
-
-	:root {
-		/* define colors scheme (stealing from "aarthificial") */
-		--black: #0e0d0e;
-		--gray: #19181a;
-		--red: #963c3d;
-		--blue: #0a78f5;
-		--yellow: #e6a945;
-		--white: white;
-
-		/* define constants */
-		--border-radius: 3px;
-		--padding: 8px;
-		--margin: 10px;
-		--box-shadow: black 0 0 16px 2px;
-	}
-</style>
-
 </html>
