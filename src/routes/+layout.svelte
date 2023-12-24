@@ -6,6 +6,8 @@
 </script>
 
 <SkipToContent />
-<Header />
 <Navigation />
-<slot />
+<div class="ml-[65px]">
+  <Header />
+  <slot />
+</div>

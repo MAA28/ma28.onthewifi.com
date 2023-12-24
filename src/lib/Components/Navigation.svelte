@@ -35,7 +35,7 @@
   <ol id="titles">
     {#each titles as title}
       <li>
-        <a href={$page.url.href}>{title}</a>
+        <a href={$page.url.href + "#" + title}>{title}</a>
       </li>
     {/each}
   </ol>
@@ -51,14 +51,12 @@
     background-color: var(--gray);
 
     &:hover {
-      #pages {
-        li {
-          gap: var(--padding);
+      #pages li {
+        gap: var(--padding);
 
-          a {
-            max-width: 200px;
-            opacity: 1;
-          }
+        a {
+          max-width: 200px;
+          opacity: 1;
         }
       }
     }
@@ -81,6 +79,7 @@
 
         a {
           text-decoration: none;
+          font-weight: bolder;
           color: var(--gray);
           white-space: nowrap;
           max-width: 0px;
@@ -100,11 +99,9 @@
       #titles {
         li {
           a {
-            &::marker {
-            }
             opacity: 1;
             max-width: 200px;
-            max-height: 5rem;
+            max-height: 5.5rem;
           }
         }
       }
@@ -128,7 +125,8 @@
           opacity: 0;
           display: block;
           width: fit-content;
-          overflow: hidden;
+          overflow-y: scroll;
+          overflow-x: hidden;
           max-width: 0px;
           max-height: 0px;
           transition: inherit;
