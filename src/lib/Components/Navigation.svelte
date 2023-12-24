@@ -1,14 +1,29 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { theme } from "$lib/stores/theme";
 
-  export const titles: String[] = [
-    "Manifest der Kommunistischen Partei",
-    "Satzung der SDAJ",
-    "Kommunisten Heute - die Weltanschaung der DKP",
-  ];
+  export let titles: String[];
+  export let focused_index: number = 0;
 </script>
 
-<nav>
+<nav
+  on:mouseenter={() =>
+    setTimeout(
+      () =>
+        document
+          .querySelector("#titles :nth-child(" + (focused_index + 1) + ")")
+          ?.scrollIntoView({ behavior: "smooth" }),
+      515
+    )}
+  on:mouseleave={() =>
+    setTimeout(
+      () =>
+        document
+          .querySelector("#titles :nth-child(" + (focused_index + 1) + ")")
+          ?.scrollIntoView({ behavior: "smooth" }),
+      515
+    )}
+>
   <ul id="pages">
     <li>
       <img src="icons/mdi-github.svg" alt="Github Icon" />
@@ -39,10 +54,25 @@
       </li>
     {/each}
   </ol>
+  <div
+    id="theme-selector"
+    on:click={() =>
+      ($theme = $theme == "light mode" ? "dark mode" : "light mode")}
+  >
+    {#if $theme == "dark mode"}
+      <img src="icons/dark-mode.svg" />
+      <div>Dark Mode</div>
+    {:else if $theme == "light mode"}
+      <img src="icons/light-mode.svg" />
+      <div>Light Mode</div>
+    {/if}
+  </div>
 </nav>
 
 <style lang="postcss">
   nav {
+    transition: all 0.5s;
+
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -61,6 +91,7 @@
       }
     }
     #pages {
+      flex-shrink: 0;
       padding: 0;
       overflow: hidden;
       ::marker {
@@ -88,7 +119,7 @@
         }
 
         img {
-          height: 25px;
+          height: 30px;
           filter: invert(1);
         }
         transition: inherit;
@@ -97,6 +128,9 @@
     }
     &:hover {
       #titles {
+        width: 100%;
+        overflow-y: scroll;
+
         li {
           a {
             opacity: 1;
@@ -107,13 +141,18 @@
       }
     }
     #titles {
-      list-style: decimal;
+      overflow-y: hidden;
+
+      list-style: decimal-leading-zero;
       list-style-position: inside;
-      padding: var(--padding);
+      padding: 0 var(--padding);
       width: min-content;
       li {
         &::marker {
+          font-size: smaller;
+
           font-weight: bolder;
+          transition: inherit;
           transition: inherit;
         }
 
@@ -135,6 +174,36 @@
       }
       transition: inherit;
     }
-    transition: all 0.5s;
+    &:hover {
+      #theme-selector {
+        gap: var(--padding);
+
+        div {
+          max-width: 200px;
+          opacity: 1;
+        }
+      }
+    }
+    #theme-selector {
+      gap: 0;
+      display: flex;
+      align-items: center;
+      margin: var(--margin);
+      margin-top: auto;
+      padding: var(--padding);
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      img {
+        height: 30px;
+      }
+      div {
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: inherit;
+      }
+      transition: inherit;
+    }
   }
 </style>
