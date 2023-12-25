@@ -1,18 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,600&display=swap");
+@layer utilities {
+  .text {
+    color: var(--text);
+  }
+  .text-background {
+    color: var(--background);
+  }
+  .text-secondary {
+    color: var(--secondary);
+  }
+  .text-primary {
+    color: var(--primary);
+  }
+  .text-accent {
+    color: var(--accent);
+  }
+  .text-secondary-accent {
+    color: var(--secondary-accent);
+  }
+
+  .bg {
+    background: var(--background);
+  }
+  .bg-text {
+    background: var(--text);
+  }
+  .bg-secondary {
+    background: var(--secondary);
+  }
+  .bg-primary {
+    background: var(--primary);
+  }
+  .bg-accent {
+    background: var(--accent);
+  }
+  .bg-secondary-accent {
+    background: var(--secondary-accent);
+  }
+
+  .border-text {
+    border-color: var(--text);
+  }
+  .border-background {
+    border-color: var(--background);
+  }
+  .border-secondary {
+    border-color: var(--secondary);
+  }
+  .border-primary {
+    border-color: var(--primary);
+  }
+  .border-accent {
+    border-color: var(--accent);
+  }
+  .border-secondary-accent {
+    border-color: var(--secondary-accent);
+  }
+
+  .shadow-text {
+    shadow-color: var(--text);
+  }
+  .shadow-background {
+    shadow-color: var(--background);
+  }
+  .shadow-secondary {
+    shadow-color: var(--secondary);
+  }
+  .shadow-primary {
+    shadow-color: var(--primary);
+  }
+  .shadow-accent {
+    shadow-color: var(--accent);
+  }
+  .shadow-secondary-accent {
+    shadow-color: var(--secondary-accent);
+  }
+}
 
 @layer base {
-  :root {
-    /* define colors scheme (stealing from "aarthificial") */
-    --black: #0e0d0e;
-    --gray: #19181a;
-    --red: #963c3d;
-    --blue: #0a78f5;
-    --yellow: #e6a945;
-    --white: white;
+  html {
+    /* define colors scheme (stealing from "aarthificial") https://www.realtimecolors.com/?colors=ffffff-0e0d0e-963c3d-19181a-0a78f5&fonts=Poppins-Poppins */
+    --background: #0e0d0e;
+    --secondary: #19181a;
+    --primary: #963c3d;
+    --accent: #0a78f5;
+    --secondary-accent: #e6a945;
+    --text: white;
 
     /* define constants */
     --border-radius: 3px;
@@ -20,12 +98,22 @@
     --margin: 10px;
     --box-shadow: black 0 0 16px 2px;
   }
+
+  .light {
+    --text: #000000;
+    --background: #f3f2f3;
+    --primary: #c3696b;
+    --secondary: #d2ced4;
+    --secondary-accent: #e6a945;
+    --accent: #0a78f5;
+  }
+
   body {
     margin: 0;
     font-family: "IBM Plex Mono", monospace;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--black);
+    background-color: var(--background);
   }
 }

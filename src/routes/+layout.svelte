@@ -11,41 +11,29 @@
       $theme = window.matchMedia("(prefers-color-scheme: light)").matches
         ? "light mode"
         : "dark mode";
+
+    theme.subscribe((value) => {
+      let root = document.querySelector(":root");
+      if (root) {
+        switch (value) {
+          case "light mode":
+            root.classList.add("light");
+            break;
+          case "dark mode":
+            root.classList.remove("light");
+            break;
+          case "system":
+            break;
+        }
+      }
+    });
   });
 </script>
 
 <SkipToContent />
-<Navigation
-  titles={[
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "asdsao",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-    "HIoasdiuasdo",
-    "asdhjkasdkjah",
-    "ljasdfhsugsdo",
-  ]}
-/>
-<div class="ml-[65px]">
-  <Header />
+<Navigation />
+<Header />
+
+<div class="ml-[105px] mr-[39px] mt-[60px]">
   <slot />
-  <button
-    on:click={() =>
-      document.querySelector("#titles :nth-child(12)")?.scrollIntoView()}
-    >asd</button
-  >
 </div>

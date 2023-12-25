@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { theme } from "$lib/stores/theme";
+  import { titles } from "$lib/stores/titles";
 
-  export let titles: String[];
   export let focused_index: number = 0;
 </script>
 
@@ -26,47 +26,47 @@
 >
   <ul id="pages">
     <li>
-      <img src="icons/mdi-github.svg" alt="Github Icon" />
+      <img src="icons/mdi-account-box-multiple.svg" alt="About me Icon" />
 
-      <a class="no-underline" href="https://github.com/MAA28">GitHub</a>
+      <a href="/AboutMe">About me</a>
     </li>
     <li>
       <img src="icons/mdi-book.svg" alt="Book Icon" />
 
-      <a href="/blogs">Blogs and more</a>
+      <a href="/blogs">Blog and more</a>
+    </li>
+    <li>
+      <img src="icons/mdi-github.svg" alt="Github Icon" />
+
+      <a class="no-underline" href="https://github.com/MAA28">GitHub</a>
     </li>
     <li>
       <img src="icons/mdi-instagram.svg" alt="Instagram Icon" />
 
       <a href="https://www.instagram.com/m.a.a._28/">Instagram</a>
     </li>
-    <li>
-      <img src="icons/mdi-account-box-multiple.svg" alt="About me Icon" />
-
-      <a href="/AboutMe">About Me</a>
-    </li>
   </ul>
 
   <ol id="titles">
-    {#each titles as title}
+    {#each $titles as title}
       <li>
         <a href={$page.url.href + "#" + title}>{title}</a>
       </li>
     {/each}
   </ol>
-  <div
+  <button
     id="theme-selector"
     on:click={() =>
       ($theme = $theme == "light mode" ? "dark mode" : "light mode")}
   >
     {#if $theme == "dark mode"}
-      <img src="icons/dark-mode.svg" />
+      <img src="icons/dark-mode.svg" alt="Dark Mode Icon" />
       <div>Dark Mode</div>
     {:else if $theme == "light mode"}
-      <img src="icons/light-mode.svg" />
+      <img src="icons/light-mode.svg" alt="Light Mode Icon" />
       <div>Light Mode</div>
     {/if}
-  </div>
+  </button>
 </nav>
 
 <style lang="postcss">
@@ -78,7 +78,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: var(--gray);
+    background-color: var(--secondary);
 
     &:hover {
       #pages li {
@@ -102,7 +102,7 @@
         display: flex;
         align-items: center;
 
-        background-color: var(--red);
+        background-color: var(--primary);
         border-radius: var(--border-radius);
         padding: var(--padding);
         margin: var(--margin);
@@ -111,7 +111,7 @@
         a {
           text-decoration: none;
           font-weight: bolder;
-          color: var(--gray);
+          color: var(--secondary);
           white-space: nowrap;
           max-width: 0px;
           opacity: 0;
@@ -122,6 +122,7 @@
           height: 30px;
           filter: invert(1);
         }
+
         transition: inherit;
       }
       transition: inherit;
@@ -156,7 +157,7 @@
           transition: inherit;
         }
 
-        color: var(--white);
+        color: var(--text);
         margin: var(--margin);
         border-radius: var(--border-radius);
         padding: var(--padding) 0;
@@ -191,12 +192,14 @@
       margin: var(--margin);
       margin-top: auto;
       padding: var(--padding);
-      background-color: var(--white);
+      background-color: var(--text);
       border-radius: var(--border-radius);
       img {
         height: 30px;
+        filter: invert(1);
       }
       div {
+        color: var(--secondary);
         max-width: 0;
         opacity: 0;
         overflow: hidden;
@@ -205,5 +208,8 @@
       }
       transition: inherit;
     }
+  }
+  .light * img {
+    filter: none !important;
   }
 </style>
