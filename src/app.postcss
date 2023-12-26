@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,600&display=swap");
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 @layer utilities {
@@ -83,6 +82,26 @@
 }
 
 @layer base {
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+  ul ul,
+  ol ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
+  }
+  ol ol,
+  ul ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+  }
   html {
     /* define colors scheme (stealing from "aarthificial") https://www.realtimecolors.com/?colors=ffffff-0e0d0e-963c3d-19181a-0a78f5&fonts=Poppins-Poppins */
     --background: #0e0d0e;

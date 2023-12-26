@@ -2,8 +2,28 @@
   import { page } from "$app/stores";
   import { theme } from "$lib/stores/theme";
   import { titles } from "$lib/stores/titles";
+  import { focusedParagraph } from "$lib/stores/focus";
+  import { onMount } from "svelte";
+  import slugify from "slugify";
 
-  export let focused_index: number = 0;
+  let mounted = false;
+
+  onMount(() => (mounted = true));
+
+  $: if (mounted) {
+    document
+      .querySelectorAll("#titles li")
+      .forEach((element) => element.classList.remove("focused"));
+    document
+      .querySelector("#titles :nth-child(" + ($focusedParagraph + 1) + ")")
+      ?.classList.add("focused");
+    console.log(
+      document.querySelector(
+        "#titles :nth-child(" + ($focusedParagraph + 1) + ")"
+      )?.classList
+    );
+  }
+  console.log($page);
 </script>
 
 <nav
@@ -11,7 +31,7 @@
     setTimeout(
       () =>
         document
-          .querySelector("#titles :nth-child(" + (focused_index + 1) + ")")
+          .querySelector("#titles :nth-child(" + ($focusedParagraph + 1) + ")")
           ?.scrollIntoView({ behavior: "smooth" }),
       515
     )}
@@ -19,7 +39,7 @@
     setTimeout(
       () =>
         document
-          .querySelector("#titles :nth-child(" + (focused_index + 1) + ")")
+          .querySelector("#titles :nth-child(" + ($focusedParagraph + 1) + ")")
           ?.scrollIntoView({ behavior: "smooth" }),
       515
     )}
@@ -50,7 +70,7 @@
   <ol id="titles">
     {#each $titles as title}
       <li>
-        <a href={$page.url.href + "#" + title}>{title}</a>
+        <a href={$page.url.pathname + "#" + slugify(title)}>{title}</a>
       </li>
     {/each}
   </ol>
@@ -170,6 +190,10 @@
           max-width: 0px;
           max-height: 0px;
           transition: inherit;
+        }
+
+        &.focused {
+          color: red;
         }
         transition: inherit;
       }
