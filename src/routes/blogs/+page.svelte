@@ -7,7 +7,7 @@
   const source = `# This is a header
 
 
-This is a paragraph.
+This is a paragraph. **Fett** *kursiv*
 
 * This is a list
 * With two items
@@ -22,11 +22,21 @@ This is a paragraph.
 
 # nother title
 asdasd
-\`\`\`
-asdsd
+
+> hi ich bin malte und ich bin sehr happy mit der welt weil der sozilaismus siegreich sein wird und wir alle frei sein werden
+
+\`\`\`python
+import lib
+
+a = 4
+
+def f(x):
+  return 3 * x
+
+  f(a)
 \`\`\`
 
-$asdasd$
+
 
 `;
 </script>

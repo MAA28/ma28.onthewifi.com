@@ -21,7 +21,7 @@ import Tablehead from "./renderers/tablehead.svelte";
 import Tablerow from "./renderers/tablerow.svelte";
 import Text from "./renderers/text.svelte";
 
-
+// TODO: inline not working
 // https://marked.js.org/using_pro#renderer
 let renderers = {
         code: Code,

@@ -17,13 +17,7 @@
     document
       .querySelector("#titles :nth-child(" + ($focusedParagraph + 1) + ")")
       ?.classList.add("focused");
-    console.log(
-      document.querySelector(
-        "#titles :nth-child(" + ($focusedParagraph + 1) + ")"
-      )?.classList
-    );
   }
-  console.log($page);
 </script>
 
 <nav

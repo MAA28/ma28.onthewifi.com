@@ -4,7 +4,13 @@
   export let checked: boolean;
 </script>
 
-<li class="text-xl text">
-  {text}
-  <slot />
-</li>
+{#if task}
+  <li class="text-xl list-none text">
+    <input type="checkbox" {checked} disabled />
+    <slot />
+  </li>
+{:else}
+  <li class="text-xl text">
+    <slot />
+  </li>
+{/if}
