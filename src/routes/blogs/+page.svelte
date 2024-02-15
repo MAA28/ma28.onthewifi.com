@@ -1,8 +1,5 @@
 <script>
-  import SvelteMarkdown from "svelte-markdown";
-  import renderers from "$lib/Markdown/renderer";
-  import { titles } from "$lib/stores/titles";
-  $titles = [];
+  import MarkdownBlog from "$lib/Components/MarkdownBlog.svelte";
 
   const source = `# This is a header
 
@@ -41,4 +38,4 @@ def f(x):
 `;
 </script>
 
-<SvelteMarkdown {source} {renderers} />
+<MarkdownBlog {source} />
